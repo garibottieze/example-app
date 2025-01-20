@@ -1,0 +1,22 @@
+{
+    "name": "$VENDOR$/$LOWER_NAME$",
+    "description": "",
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {}
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "$MODULE_NAMESPACE$\\$STUDLY_NAME$\\": "$APP_FOLDER_NAME$",
+            "$MODULE_NAMESPACE$\\$STUDLY_NAME$\\Database\\Factories\\": "Database/Factories/",
+            "$MODULE_NAMESPACE$\\$STUDLY_NAME$\\Database\\Seeders\\": "Database/Seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "$MODULE_NAMESPACE$\\$STUDLY_NAME$\\Tests\\": "Tests/"
+        }
+    }
+}

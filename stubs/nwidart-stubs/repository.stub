@@ -1,0 +1,13 @@
+<?php
+
+namespace $CLASS_NAMESPACE$;
+
+use App\Repositories\Repository;
+
+class $CLASS$ extends Repository
+{
+    public function __construct()
+    {
+        //
+    }
+}

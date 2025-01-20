@@ -1,0 +1,10 @@
+<?php
+
+namespace $NAMESPACE$;
+
+use App\Entities\Entity;
+
+class $CLASS$ extends Entity
+{
+    protected $fillable = $FILLABLE$;
+}

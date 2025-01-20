@@ -1,0 +1,9 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+
+Route::prefix('$LOWER_NAME$')->group(function () {
+    Route::middleware(['auth:sanctum'])->group(function () {
+        //
+    });
+});
