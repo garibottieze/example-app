@@ -16,6 +16,11 @@ abstract class Repository implements RepositoryInterface
         return $this->entity->all();
     }
 
+    public function paginate(int $perPage): object
+    {
+        return $this->entity->simplePaginate($perPage);
+    }
+
     public function find($id): ?object
     {
         return $this->entity->find($id);

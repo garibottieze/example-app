@@ -3,6 +3,7 @@
 namespace Modules\Operators\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\PaginateRequest;
 use Modules\Operators\Http\Requests\JustOperatorIdRequest;
 use Modules\Operators\Http\Requests\StoreOperatorRequest;
 use Modules\Operators\Http\Requests\UpdateOperatorRequest;
@@ -18,10 +19,10 @@ class OperatorsController extends Controller
     {
     }
 
-    public function index(): object
+    public function index(PaginateRequest $request): object
     {
-        $operators = $this->operatorRepository->all();
-        return response()->success(OperatorSummaryResource::collection($operators));
+        $operators = $this->operatorRepository->paginate($request->per_page);
+        return response()->withPaginate(OperatorSummaryResource::collection($operators));
     }
 
     public function store(StoreOperatorRequest $request): object
