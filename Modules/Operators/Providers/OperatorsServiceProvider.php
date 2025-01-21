@@ -3,6 +3,8 @@
 namespace Modules\Operators\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Modules\Operators\Interfaces\OperatorRepositoryInterface;
+use Modules\Operators\Repositories\OperatorRepository;
 use Nwidart\Modules\Traits\PathNamespace;
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
@@ -29,7 +31,7 @@ class OperatorsServiceProvider extends ServiceProvider
         $this->app->register(EventServiceProvider::class);
         $this->app->register(RouteServiceProvider::class);
 
-        // $this->app->bind();
+        $this->app->bind(OperatorRepositoryInterface::class, OperatorRepository::class);
     }
 
     protected function registerCommands(): void
