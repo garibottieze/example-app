@@ -1,0 +1,11 @@
+{
+    "name": "Operators",
+    "alias": "operators",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Operators\\Providers\\OperatorsServiceProvider"
+    ],
+    "files": []
+}

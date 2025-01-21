@@ -1,0 +1,22 @@
+{
+    "name": "nwidart/operators",
+    "description": "",
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {}
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Operators\\": "/",
+            "Modules\\Operators\\Database\\Factories\\": "Database/Factories/",
+            "Modules\\Operators\\Database\\Seeders\\": "Database/Seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\Operators\\Tests\\": "Tests/"
+        }
+    }
+}
