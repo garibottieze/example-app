@@ -13,7 +13,7 @@ Route::middleware('auth:sanctum')->group(function () {
             Route::post('/', 'store');
             Route::get('/detail', 'show');
             Route::put('/', 'update');
-            Route::delete('/', 'delete');
+            Route::delete('/', 'destroy');
         });
     });
 });

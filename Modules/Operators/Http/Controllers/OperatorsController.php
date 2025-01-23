@@ -54,7 +54,7 @@ class OperatorsController extends Controller
         return response()->justMessage('Operator updated successfully.');
     }
 
-    public function delete(JustOperatorIdRequest $request): object
+    public function destroy(JustOperatorIdRequest $request): object
     {
         $this->operatorRepository->delete($request->id);
         return response()->justMessage('Operator deleted successfully.');

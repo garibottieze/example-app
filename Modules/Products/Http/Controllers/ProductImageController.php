@@ -12,7 +12,7 @@ class ProductImageController extends Controller
         //
     }
 
-    public function delete(): object
+    public function destroy(): object
     {
         //
     }

@@ -52,7 +52,7 @@ class ProductController extends Controller
         return response()->justMessage('Product updated successfully.');
     }
 
-    public function delete(JustProductIdRequest $request): object
+    public function destroy(JustProductIdRequest $request): object
     {
         $this->productRepository->delete($request->id);
         return response()->justMessage('Product deleted successfully.');
