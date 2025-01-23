@@ -26,6 +26,11 @@ abstract class Repository implements RepositoryInterface
         return $this->entity->find($id);
     }
 
+    public function findForced($id): ?object
+    {
+        return $this->entity->withTrashed()->find($id);
+    }
+
     public function create(array $attributes): object
     {
         return $this->entity->create($attributes);

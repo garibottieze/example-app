@@ -33,13 +33,22 @@ class ProductController extends Controller
 
     public function show(JustProductIdRequest $request): object
     {
-        $product = $this->productRepository->find($request->id);
+        $product = $this->productRepository->findForced($request->id);
+        if ($product->trashed()) {
+            abort(422, 'The product is still trashed.');
+        }
         return response()->success(ProductResource::make($product));
     }
 
     public function update(UpdateProductRequest $request): object
     {
-        $this->productRepository->update($request->validated(), $request->id);
+        $product = $this->productRepository->find($request->id);
+        if ($product->sku != $request->sku) {
+            if ($this->productRepository->skuExists($request->sku)) {
+                abort(422, 'Sku already exists.');
+            }
+        }
+        $this->productRepository->update($request->validated(), $product->id);
         return response()->justMessage('Product updated successfully.');
     }
 

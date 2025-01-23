@@ -9,6 +9,12 @@ class ProductSummaryResource extends JsonResource
 {
     public function toArray(Request $request): array
     {
-        return [];
+        return [
+            'id' => $this->id,
+            'name' => $this->name,
+            'active' => $this->active,
+            'sku' => $this->sku,
+            'stock' => $this->stock
+        ];
     }
 }
