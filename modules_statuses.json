@@ -1,5 +1,6 @@
 {
     "Common": true,
     "Operators": true,
-    "Auth": true
+    "Auth": true,
+    "Products": true
 }
