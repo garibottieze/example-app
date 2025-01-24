@@ -21,7 +21,7 @@ class OperatorsController extends Controller
 
     public function index(PaginateRequest $request): object
     {
-        $operators = $this->operatorRepository->paginate($request->per_page);
+        $operators = $this->operatorRepository->paginate($request);
         return response()->withPaginate(OperatorSummaryResource::collection($operators));
     }
 

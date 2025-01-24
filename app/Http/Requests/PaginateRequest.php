@@ -14,14 +14,12 @@ class PaginateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'per_page' => 'nullable|integer|min:1|max:50',
+            'order_by' => 'string',
+            'direction_desc' => 'required_with:order_by|boolean',
+            'search_by' => 'string',
+            'search_value' => 'nullable',
+            'strict_search' => 'required_with:search_value|boolean',
+            'search_between' => 'array|size:2',
         ];
-    }
-
-    public function passedValidation(): void
-    {
-        $this->merge([
-            'per_page' => $this->per_page ?? 15,
-        ]);
     }
 }

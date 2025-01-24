@@ -21,7 +21,7 @@ class ProductController extends Controller
 
     public function index(PaginateRequest $request): object
     {
-        $products = $this->productRepository->paginate($request->per_page);
+        $products = $this->productRepository->paginate($request);
         return response()->withPaginate(ProductSummaryResource::collection($products));
     }
 
