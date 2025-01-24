@@ -3,7 +3,6 @@
 namespace Modules\Operators\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Support\Facades\Hash;
 
 class StoreOperatorRequest extends FormRequest
 {
@@ -20,12 +19,5 @@ class StoreOperatorRequest extends FormRequest
             'email' => 'required|email|unique:operators,email',
             'password' => 'required|confirmed|min:8',
         ];
-    }
-
-    protected function passedValidation(): void
-    {
-        $this->merge([
-            'password' => Hash::make($this->password)
-        ]);
     }
 }
