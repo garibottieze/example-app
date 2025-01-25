@@ -16,10 +16,11 @@ class PaginateRequest extends FormRequest
         return [
             'order_by' => 'string',
             'direction_desc' => 'required_with:order_by|boolean',
-            'search_by' => 'string',
-            'search_value' => 'nullable',
-            'strict_search' => 'required_with:search_value|boolean',
-            'search_between' => 'array|size:2',
+            'search' => 'nullable|array|max:5',
+            'search.*.by' => 'string',
+            'search.*.value' => 'nullable',
+            'search.*.strict' => 'required_with:search.*.value|boolean',
+            'search.*.between' => 'nullable|array|size:2',
         ];
     }
 }
