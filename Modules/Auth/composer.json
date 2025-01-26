@@ -1,0 +1,22 @@
+{
+    "name": "nwidart/auth",
+    "description": "",
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {}
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Auth\\": "/",
+            "Modules\\Auth\\Database\\Factories\\": "Database/Factories/",
+            "Modules\\Auth\\Database\\Seeders\\": "Database/Seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\Auth\\Tests\\": "Tests/"
+        }
+    }
+}

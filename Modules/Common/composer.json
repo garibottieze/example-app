@@ -1,0 +1,22 @@
+{
+    "name": "nwidart/common",
+    "description": "",
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {}
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Common\\": "/",
+            "Modules\\Common\\Database\\Factories\\": "Database/Factories/",
+            "Modules\\Common\\Database\\Seeders\\": "Database/Seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\Common\\Tests\\": "Tests/"
+        }
+    }
+}
